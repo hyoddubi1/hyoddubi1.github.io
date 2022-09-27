@@ -17,7 +17,7 @@ tags: [AI, Midjourney, Art]
 
 ![A_person_confronting_sand_storm_underwater.png](/assets/images/posts/2022-09-27/A_person_confronting_sand_storm_underwater.png)
 
-## 기억 안남
+## 아래 그림들은 뭘로 했나 기억이 잘 안 난다.
 
 ![midjourney01.png](/assets/images/posts/2022-09-27/midjourney01.png)
 
@@ -44,7 +44,3 @@ tags: [AI, Midjourney, Art]
 ![midjourney12.png](/assets/images/posts/2022-09-27/midjourney12.png)
 
 ![midjourney13.png](/assets/images/posts/2022-09-27/midjourney13.png)
-
-![midjourney14.png](/assets/images/posts/2022-09-27/midjourney14.png)
-
-![midjourney15.png](/assets/images/posts/2022-09-27/midjourney15.png)
