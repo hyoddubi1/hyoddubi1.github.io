@@ -69,11 +69,12 @@ Windows 기능 켜기/끄기가 있다.
 ##3 도커 끄고 다시 하기(매우굿)
 
 열심히 찾아보니까 스택오버플로우에 링크가 있었다.
+
 [Stackoverflow Link](https://stackoverflow.com/questions/66074090/system-invalidoperationexception-failed-to-deploy-distro-docker-desktop-to-loc)
 
 그 중 Greenfly77의 의견을 반영했다.
 
-왜? 다른건 막 다 WSL 지우고 도커 지우고 그러라는데 나는 그러고 싶지 안항ㅆ다.
+왜? 다른건 막 다 WSL 지우고 도커 지우고 그러라는데 나는 그러고 싶지 않았다.
 
 답변에 의하면 도커에서는 WSL이 없노라고 뜬다만 이 문제는 WSL 문제가 아니라 Docker의 문제라는 것.
 
@@ -94,7 +95,7 @@ Windows 기능 켜기/끄기가 있다.
 
 그리고 설치 후 재부팅해서 파워쉘 가니
 
-//wsl이 작동이 잘 됐다!!//
+**wsl이 작동이 잘 됐다!!**
 
 WSL 작동 확인 하고 도커실행하니
 
