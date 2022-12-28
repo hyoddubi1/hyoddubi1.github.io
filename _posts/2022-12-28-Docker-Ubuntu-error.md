@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Docker에서 "dtderr: linux용 windows 하위 시스템 설치되어 있지 않습니다." 에러
+title: Docker에서 dtderr linux용 windows 하위 시스템 설치되어 있지 않습니다. 에러
 subtitle: WSL, 도커, 우분투 에러
 categories: misc
 tags: [Docker, Windows subsystem Linux (WSL)]
