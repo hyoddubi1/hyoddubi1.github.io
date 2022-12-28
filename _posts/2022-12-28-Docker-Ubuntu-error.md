@@ -43,7 +43,7 @@ AppData\Local\Docker\wsl\distro: exit code: 1
 
 그래서 나랑 관련된 모든 해결책들을 다 시도해 보았다.
 
-##1 권한 주기(설치도?)
+## 1 권한 주기(설치도?)
 
 ```
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
@@ -56,7 +56,7 @@ wsl --set-default-version 2
 ```
 로 하면 wsl이 없다고 다시 오류가 뜬다
 
-##2 Windows 기능에서 윈도우즈 서브시스템 체크하기
+## 2 Windows 기능에서 윈도우즈 서브시스템 체크하기
 
 "Windows 기능"이라는 앱을 키면
 
@@ -66,7 +66,7 @@ Windows 기능 켜기/끄기가 있다.
 
 그래서 체크 풀고 확인하고 다시 체크를 키고 확인하고 재부팅했다.
 
-##3 도커 끄고 다시 하기(매우굿)
+## 3 도커 끄고 다시 하기(매우굿)
 
 열심히 찾아보니까 스택오버플로우에 링크가 있었다.
 
