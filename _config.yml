@@ -24,10 +24,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Hyoseob's personal blog
-email: hyoddubi@naver.com
-author: hyoddubi1
-
+title: Your awesome title
+email: your-email@domain.com
+author: GitHub User
 
 # Copyright setting
 # You can use any html code, currently below placeholders are available:
@@ -44,10 +43,9 @@ author: hyoddubi1
 copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
-        Civil engineer
-        #  Write an awesome description for your new site here. You can edit this
-        #  line in _config.yml. It will appear in your document head meta (for
-        #  Google search results) and in your feed.xml site description.
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. https://example.com
@@ -57,7 +55,6 @@ favicon: "" # the favicon for your site
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 yat:
   date_format: "%b %d, %Y"
-
 
 # If you want more debug log, you can set true
 # debug: false
@@ -76,7 +73,7 @@ yat:
 # sitemap: false
 
 # If you want to change site language, you can set lang option
-lang: "ko"  # default lang is en
+# lang: "en"  # default lang is en
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
@@ -138,7 +135,7 @@ lang: "ko"  # default lang is en
 # it will be always kept on every visit (i.e. no matter
 # the browser is closed or not)
 #
-night_mode: "auto"
+# night_mode: "auto"
 
 # Code badge setting
 # You can enable or disable the code badge and so on
