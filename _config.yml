@@ -24,9 +24,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@domain.com
-author: GitHub User
+title: Hyoseob's personal blog
+email: hyoddubi@naver.com
+author: hyoddubi1
 
 # Copyright setting
 # You can use any html code, currently below placeholders are available:
@@ -43,9 +43,10 @@ author: GitHub User
 copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+        Civil engineer
+        #  Write an awesome description for your new site here. You can edit this
+        #  line in _config.yml. It will appear in your document head meta (for
+        #  Google search results) and in your feed.xml site description.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. https://example.com
@@ -55,6 +56,7 @@ favicon: "" # the favicon for your site
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 yat:
   date_format: "%b %d, %Y"
+  lang: "ko"
 
 # If you want more debug log, you can set true
 # debug: false
@@ -65,9 +67,8 @@ yat:
 # If you want to change the content width, you can set to another value
 # content_width: "920px"
 
-# Google analytics - GA4
-# google_analytics: [Measurement ID]
-# enableDNT: "false"
+# Google analytics
+# google_analytics: [Tracking ID]
 
 # If you want to generate website sitemap, you can set true
 # sitemap: false
@@ -135,7 +136,7 @@ yat:
 # it will be always kept on every visit (i.e. no matter
 # the browser is closed or not)
 #
-# night_mode: "auto"
+night_mode: "auto"
 
 # Code badge setting
 # You can enable or disable the code badge and so on
@@ -182,27 +183,6 @@ yat:
 
 # Pagination setting
 # paginate: 5
-
-# Photo previewer settings (PhotoSwipe 5)
-# the options please refer to: https://photoswipe.com/options/
-# photo_previewer:
-#  gallery: "section.main"
-#  children: "a.photo-swipe"
-#  bgOpacity: 0.8
-#  padding:
-#    top: 20
-#    bottom: 40
-#    left: 100
-#    right: 100
-
-# Click to top settings
-# click_to_top:
-#   light:
-#     background_color: "white"
-#     color: "#454545"
-#   dark:
-#     background_color: "#34323d"
-#     color: "#bbb"
 
 # Disqus comments
 # disqus:
