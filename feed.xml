@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="/jekyll-theme-yat/feed.xml" rel="self" type="application/atom+xml" /><link href="/jekyll-theme-yat/" rel="alternate" type="text/html" /><updated>2023-08-01T00:51:41+00:00</updated><id>/jekyll-theme-yat/feed.xml</id><title type="html">Hyoseob’s personal blog</title><subtitle>Civil engineer #  Write an awesome description for your new site here. You can edit this #  line in _config.yml. It will appear in your document head meta (for #  Google search results) and in your feed.xml site description.</subtitle><author><name>hyoddubi1</name></author><entry><title type="html">Zenodo로 Github repository doi 발급하고 참조 및 인용하기</title><link href="/jekyll-theme-yat/misc/2023/07/31/Publishing-Github-Zenodo.html" rel="alternate" type="text/html" title="Zenodo로 Github repository doi 발급하고 참조 및 인용하기" /><published>2023-07-31T00:00:00+00:00</published><updated>2023-07-31T00:00:00+00:00</updated><id>/jekyll-theme-yat/misc/2023/07/31/Publishing-Github-Zenodo</id><content type="html" xml:base="/jekyll-theme-yat/misc/2023/07/31/Publishing-Github-Zenodo.html"><![CDATA[<h3 id="왜-이걸-하게-되었는가">왜 이걸 하게 되었는가?</h3>
+
+<p>논문 작업을 하다보면 Github repository를 인용해야 할 때가 있다. 그러면 Github repository의 주소를 그대로 올릴 수 있다. 그런데 변하지 않는 doi를 발급해서 doi 주소를 인용하도록 되어 있는 경우가 있다. 다른 사람이 만든 라이브러리면 그들이 원하는 인용 방식을 취하면 되겠지만 내가 연구하면서 짠 코드를 공유하고 싶다면 doi를 내가 직접 발급받아야 한다. 이런 아카이브들로는 mendeley나 Zenodo가 있는데 이 포스트에서는 Zenodo로 하는 법을 기술한다.</p>
+
+<h2 id="github-repository의-zenodo-doi-발급-법">Github repository의 Zenodo doi 발급 법</h2>
+
+<p>결론부터 말하면 다음 링크를 따라하면 된다.
+<a href="https://docs.github.com/ko/repositories/archiving-a-github-repository/referencing-and-citing-content">Github archiving link</a></p>
+
+<p>우선, 내 Github repository가 public인지를 확인하자. Setting 탭으로 가서 스크롤 내리면 visibility를 확인할 수 있다.
+<img src="/assets/images/posts/2023-07-31/Check-visibility.png" alt="Check-visibility.png" />
+여기서 private repository를 public으로 전환한 뒤에 모든 작업을 수행하자.</p>
+
+<p>모든 예시는 pyGOSH 코드를 대상으로 예시를 보여준다. 우선 Zenodo 로그인페이지로 간다.
+<img src="/assets/images/posts/2023-07-31/Zenodo-login.png" alt="Zenodo-login.png" />
+그럼 다음 링크로 인도되며 아래 그림처럼 보인다. 이걸 따라하면 된다.
+<a href="https://zenodo.org/account/settings/github/">Zenodo github setting link</a>
+<img src="/assets/images/posts/2023-07-31/Zenodo-procedures.png" alt="Zenodo-procedures.png" />
+가능한 repository 목록에서 Zenodo에 등록하고자 하는 부분 옆의 버턴을 누르면 된다고 한다. 그런데 목록에 내가 원하는 repository가 안 보인다. 
+<img src="/assets/images/posts/2023-07-31/Zenodo-repositories-1.png" alt="Zenodo-repositories-1.png" />
+그러면 위에 sync 버튼을 누르자.
+<img src="/assets/images/posts/2023-07-31/Zenodo-procedures-sync1.png" alt="Zenodo-procedures-sync1.png" />
+그럼 뿅하고 아래 리포지토리가 나온다 그러면 off 스위치를 눌러서 on으로 만들어주자.(그래도 안 나오면 release를 먼저 추가하고 시도해보자.)
+<img src="/assets/images/posts/2023-07-31/Zenodo-procedures-sync2.png" alt="Zenodo-procedures-sync2.png" />
+여기까지 오면 다 된 것이다. 이렇게 Zenodo 싱크가 되면 release가 업데이트될때마다 Zenodo가 알아서 이를 갱신해준다.
+On으로 버튼을 바꾸고 새로고침 한 다음에 해당 리포지토리 버튼을 누르면 이렇게 Get started! 라고 나오면서 release를 만들라고 한다. 
+<img src="/assets/images/posts/2023-07-31/Zenodo-get-started.png" alt="Zenodo-get-started.png" />
+가면 release를 만들 수 있는 창이 나온다. 
+<img src="/assets/images/posts/2023-07-31/Publish-release.png" alt="Publish-release.png" />
+또는 repository 페이지에서 ‘Release’ 탭의 ‘Create a new release’를 누르면 된다.
+<img src="/assets/images/posts/2023-07-31/Releases-1.png" alt="Releases-1.png" />
+해당되는 release 제목과 내용을 넣는다. 무엇보다 위에 tag에서 v1.0.0같이 release 태그를 적어주어야 한다. Release를 publish하면 아래와 같이 된다.
+<img src="/assets/images/posts/2023-07-31/Publish-release2.png" alt="Publish-release2.png" />
+Release를 만들고 Zenodo를 가면 바로 doi가 자동으로 생성된다.
+<img src="/assets/images/posts/2023-07-31/Zenodo-generated-doi.png" alt="Zenodo-generated-doi.png" />
+이를 활용해 Github에도 doi를 업데이트할 수 있고 참조 및 인용할 수 있다.</p>]]></content><author><name>hyoddubi1</name></author><category term="misc" /><category term="Github" /><category term="Zenodo" /><category term="doi" /><summary type="html"><![CDATA[왜 이걸 하게 되었는가?]]></summary></entry><entry><title type="html">Converting tiff (.tif) raster file to ascii xyz (.xyz)</title><link href="/jekyll-theme-yat/python/2023/01/26/Converting-tiff-to-xyz.html" rel="alternate" type="text/html" title="Converting tiff (.tif) raster file to ascii xyz (.xyz)" /><published>2023-01-26T00:00:00+00:00</published><updated>2023-01-26T00:00:00+00:00</updated><id>/jekyll-theme-yat/python/2023/01/26/Converting-tiff-to-xyz</id><content type="html" xml:base="/jekyll-theme-yat/python/2023/01/26/Converting-tiff-to-xyz.html"><![CDATA[<h3 id="using-qgis">Using QGIS</h3>
+
+<p>QGIS는 <code class="language-plaintext highlighter-rouge">공간 처리 툴박스-GDAL-래스터 변환-gdal2xyz</code> 경로로 접근하면 레이어에 떠있는 래스터를 대상으로 변환할 수 있다.</p>
+
+<p>또는 <code class="language-plaintext highlighter-rouge">Processing toolbox / GDAL/OGR / [GDAL] Conversion / gdal2xyz</code></p>
+
+<p>그런데 이상하게 결과 파일이 생성되지 않았다.
+아래 로그를 첨부한다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>알고리즘 처리 중...
+'gdal2xyz' 알고리즘 시작…
+Input parameters:
+{ 'BAND' : 1, 'CSV' : False, 'INPUT' : 'D:/directory/dtm.tif', 'OUTPUT' : 'D:\output directory\output_dtm.txt' }
+
+GDAL command:
+python3 -m gdal2xyz -band 1 "D:\tiff directory\target_dtm.tif"  "D:\output directory\output_dtm.txt"
+GDAL command output:
+C:\PROGRA~1\QGIS3~1.10\bin\python3.exe: No module named gdal2xyz
+
+Execution completed in 0.96 seconds
+Results:
+{'OUTPUT': 'D:\output directory\output_dtm.txt'}
+
+출력 레이어 불러오기
+Algorithm 'gdal2xyz' finished
+</code></pre></div></div>
+
+<p>보니까 중요한 건 <code class="language-plaintext highlighter-rouge">No module named gdal2xyz</code>인 것 같다. 아무래도 QGIS 상에서 작동하는 Python 환경에 gdal2xyz라는 모듈 혹은 패키지가 없어서 나타나는 것 같다. QGIS에서는 깔려 있는데 가상환경 상에서 지원이 안 되는 것 같다. 그래서 QGIS를 별도로 깔기는 좀 무리가 있어서 파이썬 자체에서 작동해보기로 했다.</p>
+
+<h3 id="using-gdal2xyzpy-in-python-environment-anaconda-environment">Using gdal2xyz.py in Python environment (Anaconda environment)</h3>
+
+<p>우선 준비물은 <code class="language-plaintext highlighter-rouge">gdal</code>이 있는 <code class="language-plaintext highlighter-rouge">osgeo</code> 패키지이다.
+QGIS 로그에 보면 <code class="language-plaintext highlighter-rouge">python3 -m gdal2xyz -band 1 "D:/directory/dtm.tif"</code>라고 돼 있는데, 아무래도 QGIS가 파이썬 스크립트를 터미널에서 실행시키는 놈이 저 모양인 것 같다.
+그래서 <code class="language-plaintext highlighter-rouge">osgeo</code>가 설치된 가상환경을 <code class="language-plaintext highlighter-rouge">conda activate 가상환경</code>로 실행시키고 아래처럼 하니 성공적으로 추출됐다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python C:\Users\user\anaconda3\envs\geoanal\Scripts\gdal2xyz.py -band 1 "D:\tiff directory\target_dtm.tif" "D:\output directory\output_dtm.txt"
+</code></pre></div></div>
+
+<p>그리고 프로세싱 정도를 <code class="language-plaintext highlighter-rouge">0...10...20...</code>처럼 보여준다.</p>]]></content><author><name>hyoddubi1</name></author><category term="Python" /><category term="Python" /><category term="osgeo" /><category term="gdal" /><summary type="html"><![CDATA[Using QGIS]]></summary></entry><entry><title type="html">Docker에서 dtderr linux용 windows 하위 시스템 설치되어 있지 않습니다. 에러</title><link href="/jekyll-theme-yat/misc/2022/12/28/Docker-Ubuntu-error.html" rel="alternate" type="text/html" title="Docker에서 dtderr linux용 windows 하위 시스템 설치되어 있지 않습니다. 에러" /><published>2022-12-28T00:00:00+00:00</published><updated>2022-12-28T00:00:00+00:00</updated><id>/jekyll-theme-yat/misc/2022/12/28/Docker-Ubuntu-error</id><content type="html" xml:base="/jekyll-theme-yat/misc/2022/12/28/Docker-Ubuntu-error.html"><![CDATA[<h3 id="어느날부터">어느날부터</h3>
+
+<p>컴퓨터를 부팅하면 Docker desktop에서 오류 메시지가 뜨더라.</p>
+
+<p>오류 메시지 내용은</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dtderr: linux용 windows 하위 시스템 설치되어 있지 않습니다.
+</code></pre></div></div>
+<p>블라블라블라..</p>
+
+<p>사실 이것보다는 윈도우즈 PowerShell 프롬프트로 작업할 때가 더 문제였다.</p>
+
+<p>파워쉘 키면</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>. : 이 시스템에서 스크립트를 실행할 수 없으므로 C:\Users\user\Documents\WindowsPowerShell\profile.ps1 파일을 로드할 수 없습니다. 자세한 내용은 about_Execution_Policies(https://go.microsoft.com/fwlink/?LinkID=135170)를 참조하십시오.
+</code></pre></div></div>
+
+<p>이러면서 WSL 자체가 먹통이 돼 있는 것이었다.</p>
+
+<p>나는 얼마전까지 Docker랑 WSL 다 잘 쓰고 있었다.</p>
+
+<p>WSL이 설치가 안 돼있을리는 만무.</p>
+
+<p>그래서 Windows 스토어에서도 Ubuntu가 정상적으로 잘 설치되어 있다고 되어 있었다.</p>
+
+<p>그래서 여기서 Ubuntu를 키니까</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AppData\Local\Docker\wsl\distro: exit code: 1
+</code></pre></div></div>
+<p>라는 오류가 또 뜬다.</p>
+
+<p>그래서 나랑 관련된 모든 해결책들을 다 시도해 보았다.</p>
+
+<h2 id="1-권한-주기설치도">1 권한 주기(설치도?)</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart  
+</code></pre></div></div>
+<p>위 세 개는 아무 문제 없이 됐는데</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wsl --set-default-version 2
+</code></pre></div></div>
+<p>로 하면 wsl이 없다고 다시 오류가 뜬다</p>
+
+<h2 id="2-windows-기능에서-윈도우즈-서브시스템-체크하기">2 Windows 기능에서 윈도우즈 서브시스템 체크하기</h2>
+
+<p>“Windows 기능”이라는 앱을 키면</p>
+
+<p>Windows 기능 켜기/끄기가 있다.</p>
+
+<p>근데 난 원래 쓰던 사람이었으니 당연히 미리 체크가 돼있었지.</p>
+
+<p>그래서 체크 풀고 확인하고 다시 체크를 키고 확인하고 재부팅했다.</p>
+
+<h2 id="3-도커-끄고-다시-하기매우굿">3 도커 끄고 다시 하기(매우굿)</h2>
+
+<p>열심히 찾아보니까 스택오버플로우에 링크가 있었다.</p>
+
+<p><a href="https://stackoverflow.com/questions/66074090/system-invalidoperationexception-failed-to-deploy-distro-docker-desktop-to-loc">Stackoverflow Link</a></p>
+
+<p>그 중 Greenfly77의 의견을 반영했다.</p>
+
+<p>왜? 다른건 막 다 WSL 지우고 도커 지우고 그러라는데 나는 그러고 싶지 않았다.</p>
+
+<p>답변에 의하면 도커에서는 WSL이 없노라고 뜬다만 이 문제는 WSL 문제가 아니라 Docker의 문제라는 것.</p>
+
+<p>도커랑 윈도우즈 업데이트가 될 때 이런일이 있는데, 그러면 WSL을 재설치하면서 막 죽여버린단다.</p>
+
+<p>그래서 이 사람이 주는 해답은 설정(구 제어판)의 시작프로그램에서 Docker를 없애고 (도커를 지우는게아니라 시작때 키지만 말라 이말)
+윈도우를 키면 WSL이 된단다.</p>
+
+<p>그래서 재시작했는데</p>
+
+<p>여전히 WSL 오류가 있어서</p>
+
+<p>이 때 메시지에 “wsl.exe –install”하십쇼 라고 돼있어서</p>
+
+<p>속는 셈 치고 했다.</p>
+
+<p>그랬더니 우분투랑 wsl을 다시 까는 액션을 하더라.</p>
+
+<p>그리고 설치 후 재부팅해서 파워쉘 가니</p>
+
+<p><strong>wsl이 작동이 잘 됐다!!</strong></p>
+
+<p>WSL 작동 확인 하고 도커실행하니</p>
+
+<p>WSL과 도커 모두 작동이 됐다.</p>]]></content><author><name>hyoddubi1</name></author><category term="misc" /><category term="Docker" /><category term="Windows subsystem Linux (WSL)" /><summary type="html"><![CDATA[어느날부터]]></summary></entry><entry><title type="html">Pandas SettingWithCopyWarning or SettingWithCopyError 해결법</title><link href="/jekyll-theme-yat/python/2022/12/28/Pandas-SettingWithCopy-error.html" rel="alternate" type="text/html" title="Pandas SettingWithCopyWarning or SettingWithCopyError 해결법" /><published>2022-12-28T00:00:00+00:00</published><updated>2022-12-28T00:00:00+00:00</updated><id>/jekyll-theme-yat/python/2022/12/28/Pandas-SettingWithCopy-error</id><content type="html" xml:base="/jekyll-theme-yat/python/2022/12/28/Pandas-SettingWithCopy-error.html"><![CDATA[<h3 id="문제의-에러-메시지">문제의 에러 메시지</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>__main__:1: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">gps</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">"</span><span class="s">D:/gps.csv</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">y1</span> <span class="o">=</span> <span class="n">gps</span><span class="p">[</span><span class="n">gps</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="sh">'</span><span class="s">Y1</span><span class="sh">'</span><span class="p">)]</span>
+
+<span class="n">y1</span><span class="p">[</span><span class="sh">'</span><span class="s">Y2</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">y1</span><span class="p">[</span><span class="sh">'</span><span class="s">Y</span><span class="sh">'</span><span class="p">].</span><span class="n">values</span>
+
+</code></pre></div></div>
+
+<p>요런 코드에서 오류가 났다.</p>
+
+<p>찾아보니 copy warning인데 지정된 DataFrame을 딥카피하면 해결된다고 한다.</p>
+
+<p>위 코드같은 경우에는 <code class="language-plaintext highlighter-rouge">gps</code>변수의 index를 이용해 <code class="language-plaintext highlighter-rouge">y1</code> 변수가 선언돼있는데, 이렇게 바로 지정하면 y1변수가 gps의 메모리 위치를 참조해버리기 때문인 것 같다.</p>
+
+<p>이런 경우에 <code class="language-plaintext highlighter-rouge">y1</code>은 그냥 gps의 저 선언된 위치를 보여주는거라서</p>
+
+<p>gps의 메모리를 공유하는 <code class="language-plaintext highlighter-rouge">y1</code>을 수정코자 하니까 gps를 수정해야하나? 하는 생각을 하는 것 같다.</p>
+
+<p>이런 경우 Deep copy를 해야 하는데 간단히 뒤에 <code class="language-plaintext highlighter-rouge">.copy()</code>를 해주면 된다.</p>
+
+<p>그러면 컴퓨터가 해당 변수의 ‘정보’들을 복사해서 새로운 메모리를 할당해주니까 꼬이지 않는다.</p>
+
+<p>위 코드는 아래같이 바꾸면 된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">gps</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">"</span><span class="s">D:/gps.csv</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">y1</span> <span class="o">=</span> <span class="n">gps</span><span class="p">[</span><span class="n">gps</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="nb">str</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="sh">'</span><span class="s">Y1</span><span class="sh">'</span><span class="p">)].</span><span class="nf">copy</span><span class="p">()</span>
+
+<span class="n">y1</span><span class="p">[</span><span class="sh">'</span><span class="s">Y2</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">y1</span><span class="p">[</span><span class="sh">'</span><span class="s">Y</span><span class="sh">'</span><span class="p">].</span><span class="n">values</span>
+
+</code></pre></div></div>]]></content><author><name>hyoddubi1</name></author><category term="Python" /><category term="Python" /><category term="pandas" /><summary type="html"><![CDATA[문제의 에러 메시지]]></summary></entry><entry><title type="html">미드저니 AI를 이용해 생성한 이미지들</title><link href="/jekyll-theme-yat/misc/2022/09/27/Midjourney-images-that-I-generated.html" rel="alternate" type="text/html" title="미드저니 AI를 이용해 생성한 이미지들" /><published>2022-09-27T00:00:00+00:00</published><updated>2022-09-27T00:00:00+00:00</updated><id>/jekyll-theme-yat/misc/2022/09/27/Midjourney-images-that-I-generated</id><content type="html" xml:base="/jekyll-theme-yat/misc/2022/09/27/Midjourney-images-that-I-generated.html"><![CDATA[<h3 id="midjourney">Midjourney</h3>
+
+<p>미드저니를 이용해 이미지를 몇개 생성해보았다.</p>
+
+<p>생성한 이미지 중 꽤나 예쁜 것들을 올려본다.</p>
+
+<h2 id="a-person-confronting-sand-storm-underwater">A person confronting sand storm underwater</h2>
+
+<p><img src="/assets/images/posts/2022-09-27/A_person_confronting_sand_storm_underwater.png" alt="A_person_confronting_sand_storm_underwater.png" /></p>
+
+<h2 id="아래-그림들은-뭘로-했나-기억이-잘-안-난다">아래 그림들은 뭘로 했나 기억이 잘 안 난다.</h2>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney01.png" alt="midjourney01.png" /></p>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney02.png" alt="midjourney02.png" /></p>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney03.png" alt="midjourney03.png" /></p>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney04.png" alt="midjourney04.png" /></p>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney05.png" alt="midjourney05.png" /></p>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney06.png" alt="midjourney06.png" /></p>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney07.png" alt="midjourney07.png" /></p>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney08.png" alt="midjourney08.png" /></p>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney09.png" alt="midjourney09.png" /></p>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney10.png" alt="midjourney10.png" /></p>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney11.png" alt="midjourney11.png" /></p>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney12.png" alt="midjourney12.png" /></p>
+
+<p><img src="/assets/images/posts/2022-09-27/midjourney13.png" alt="midjourney13.png" /></p>]]></content><author><name>hyoddubi1</name></author><category term="misc" /><category term="AI" /><category term="Midjourney" /><category term="Art" /><summary type="html"><![CDATA[Midjourney]]></summary></entry></feed>
