@@ -28,6 +28,7 @@ title: Hyoseob's personal blog
 email: hyoddubi@naver.com
 author: hyoddubi1
 
+
 # Copyright setting
 # You can use any html code, currently below placeholders are available:
 # * current year: {currentYear}
@@ -56,7 +57,7 @@ favicon: "" # the favicon for your site
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 yat:
   date_format: "%b %d, %Y"
-  lang: "ko"
+
 
 # If you want more debug log, you can set true
 # debug: false
@@ -67,14 +68,15 @@ yat:
 # If you want to change the content width, you can set to another value
 # content_width: "920px"
 
-# Google analytics
-# google_analytics: [Tracking ID]
+# Google analytics - GA4
+# google_analytics: [Measurement ID]
+# enableDNT: "false"
 
 # If you want to generate website sitemap, you can set true
 # sitemap: false
 
 # If you want to change site language, you can set lang option
-# lang: "en"  # default lang is en
+lang: "ko"  # default lang is en
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
@@ -183,6 +185,27 @@ night_mode: "auto"
 
 # Pagination setting
 # paginate: 5
+
+# Photo previewer settings (PhotoSwipe 5)
+# the options please refer to: https://photoswipe.com/options/
+# photo_previewer:
+#  gallery: "section.main"
+#  children: "a.photo-swipe"
+#  bgOpacity: 0.8
+#  padding:
+#    top: 20
+#    bottom: 40
+#    left: 100
+#    right: 100
+
+# Click to top settings
+# click_to_top:
+#   light:
+#     background_color: "white"
+#     color: "#454545"
+#   dark:
+#     background_color: "#34323d"
+#     color: "#bbb"
 
 # Disqus comments
 # disqus:
